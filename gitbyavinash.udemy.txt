@@ -1,0 +1,86 @@
+
+Git: Is a version control system (VCS) for tracking changes in computer files.
+    - Track changes happening.
+    - Rollback (Revert files to a previous state).
+    - Compare changes and search through history.
+    - Coordinates works between multiple developers.
+    - Local repos and remote repos.
+
+Version Control: Is a system that records changes to a file or set of files over time so you can recall specific versions later.
+    - SCCM        1 file
+    - RCS         x files, 1 dir
+    - CVS         x files, x dir, 1 user
+    - SVN         x files, x dir, x user
+
+Git Terminology
+    - Repository
+        * Repo is storage space for our project.
+        * We will have some hidden files with .git.
+        * Local repo is on our local device.
+        * Remote repo is somewhere else.
+    - clone
+        * Copies an existing git repo from a remote source.
+        * Gets all files and history to local device.
+        * Create a remote connection called "origin" that points back to teh original repository.
+    - add and commit
+        * use "git add" to add changes in working directory to staging area. Git will include these changes in next commit.
+        * Use "git commit" to commit the stages snapshot to history.
+        * Use "git commit -am "message"" to add and commit in one command.
+    - push
+        * Use "git push" to transfer commits from local repo to a remote repo.
+        * We can use --force to force push (not recommended).
+    - branch
+        * branch is an isolated copy of our working environment and history.
+        * commits are recorded in the history for the current branch.
+        * default branch is "master" or "main".
+    - fetch
+        * From time-to-time, our local repo will go out of sync with remote repository.
+        * "git fetch" gets the commits from the remote repository.
+        * We can review these and we can merge using "git merge" command.
+    - merge
+        * When multiple users works on same page / functionality conflict may happen with changes.
+        * Taking commits / history from one branch and merging to another branch.
+        * If git unable to merge any files, We have to manually merge these.
+    - pull
+        * pull = fetch + merge
+    - log
+        * commit id the first 7 characters
+        * commit is 40 character long.
+        * hex decimal
+        * sha1 program
+        * --oneline
+        * --since=YYYY-MM-DD
+        * --until=YYYY-MM-DD
+        * --author="user.name"
+        * --grep
+    - diff commit-2 commit-1
+    - show commit
+    - rm
+        * remove file from local repo.
+        * --cached
+        * -f
+    - checkout
+        * allow us to switch to a new branch
+        * git checkout new-branch
+        * git push origin new-branch
+
+.gitignore: git will not track files stored under "proj_dir/.gitignore" directory.
+    * Create a directory under project folder with .gitignore and all the required file formats/patterns to ignore.
+
+Fork: is a copy of a repository
+    * forking a repository allows you to freely experiment with changes without affecting the original project.
+    * commonly, forks are used to propose changes to someone else's project.
+    * Use someone else's project as a starting point for your own idea.
+
+Conventional Commits
+    feat        Features                    A new feature
+    fix         Bug Fixes                   A bug fix
+    docs        Docume­ntation               Docume­ntation only changes
+    style       Styles                      Changes that do not affect the meaning of the code (white­-space, format­ting, missing semi-c­olons, etc)
+    refactor    Code Refact­oring            A code change that neither fixes a bug nor adds a feature
+    perf        Perfor­mance Improv­ements    A code change that improves perfor­mance
+    test        Tests                       Adding missing tests or correcting existing tests
+    build       Builds                      Changes that affect the build system or external depend­encies (example scopes: gulp, broccoli, npm)
+    ci          Continuous Integr­ations     Changes to our CI config­uration files and scripts (example scopes: Travis, Circle, Browse­rStack, SauceLabs)
+    chore       Chores                      Other changes that don't modify src or test files
+    revert      Reverts                     Reverts a previous commit
